@@ -1,0 +1,5 @@
+rule_id: "define_lowercase_identifiers"
+rule_type: "Regex"
+rule: "#\\s*define\\s+([a-z][a-zA-Z0-9_]*)"
+author: "heap-s"
+description: "Detects non-uppercase identifiers after #define - macro names should be UPPERCASE"

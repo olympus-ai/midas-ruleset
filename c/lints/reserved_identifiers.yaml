@@ -1,0 +1,5 @@
+rule_id: "reserved_identifiers"
+rule_type: "Regex"
+rule: "\\b(__|_[A-Z]|__[a-zA-Z0-9_]+|_[A-Z][a-zA-Z0-9_]*)\\b"
+author: "heap-s"
+description: "Detects usage of C reserved identifiers that must not be redefined by user code"

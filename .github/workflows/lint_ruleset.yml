@@ -1,0 +1,36 @@
+name: Lint Ruleset
+
+on:
+  push:
+    branches: [ main, master ]
+  pull_request:
+    branches: [ main, master ]
+  workflow_dispatch:
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v3
+
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.10'
+
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install pyyaml
+
+    - name: Run ruleset linter
+      run: |
+        python .github/actions/lint_ruleset.py
+
+    - name: Check for failed lint
+      if: ${{ failure() }}
+      run: |
+        echo "::error::Ruleset linting failed. Please fix the issues mentioned above."
+        exit 1

@@ -1,0 +1,5 @@
+rule_id: "line_too_long"
+rule_type: "Regex"
+rule: "(?m)^.{81,}$"
+author: "heap-s"
+description: "Detects lines that exceed 80 characters, which reduces code readability and can cause issues with some terminals"
