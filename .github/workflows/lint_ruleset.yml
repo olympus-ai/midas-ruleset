@@ -2,9 +2,9 @@ name: Lint Ruleset
 
 on:
   push:
-    branches: [ main, master ]
+    branches: [ main, master, rc ]
   pull_request:
-    branches: [ main, master ]
+    branches: [ main, master, rc ]
   workflow_dispatch:
 
 jobs:
