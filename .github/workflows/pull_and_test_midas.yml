@@ -34,7 +34,7 @@ jobs:
           docker run --rm \
             -v ${{ github.workspace }}/c/lints:/app/rules \
             -v ${{ github.workspace }}/c/lints/snippets:/app/scan \
-            midas-base-testing:latest | tee midas.log
+            ${{secrets.DOCKERHUB_USERNAME}}/midas-base-testing:latest | tee midas.log
 
       - name: Capture Output
         run: |
