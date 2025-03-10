@@ -1,0 +1,5 @@
+rule_id: "uninitialized_variables"
+rule_type: "Regex"
+rule: "\\b(?:int|char|float|double|long|short|unsigned|signed)\\s+([a-zA-Z_][a-zA-Z0-9_]*)(?:\\s*,\\s*([a-zA-Z_][a-zA-Z0-9_]*))*\\s*;(?![^{]*=)"
+author: "heap-s"
+description: "Detects potentially uninitialized variables in C code which can lead to undefined behavior"

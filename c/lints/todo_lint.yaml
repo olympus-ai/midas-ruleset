@@ -1,0 +1,5 @@
+rule_id: "todo_lint"
+rule_type: "Regex"
+rule: "\\b(TODO|FIXME|XXX|HACK|NOTE|BUG)\\b"
+author: "heap-s"
+description: "Detects TODO/FIXME/XXX/HACK/NOTE/BUG comments in the code that shouldn't be there anymore, consider removing them"

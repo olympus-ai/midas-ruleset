@@ -1,0 +1,5 @@
+rule_id: "goto_lint"
+rule_type: "Regex"
+rule: "\\bgoto\\b"
+author: "heap-s"
+description: "goto statement found, consider using structured control flow instead"
