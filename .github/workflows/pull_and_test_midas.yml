@@ -25,12 +25,16 @@ jobs:
         run: |
           docker pull ${{ secrets.DOCKERHUB_USERNAME }}/midas-base-testing:latest
 
+      - name: Check Image Pulled
+        run: |
+          docker images | grep ${{ secrets.DOCKERHUB_USERNAME }}/midas-base-testing
+
       - name: Run Tests with Midas
         run: |
           docker run --rm \
             -v ${{ github.workspace }}/c/lints:/app/rules \
             -v ${{ github.workspace }}/c/lints/snippets:/app/scan \
-            midas-base-testing | tee midas.log
+            midas-base-testing:latest | tee midas.log
 
       - name: Capture Output
         run: |
